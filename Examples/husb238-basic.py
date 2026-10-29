@@ -2,13 +2,14 @@
 # AUTHOR: Fran Fodor @ Soldered
 # BRIEF: Reads PD attach status, negotiated voltage and current from HUSB238.
 # WORKS WITH: HUSB238 USB-PD Sink Breakout: solde.red/333374
-# LAST UPDATED: 2026-07-03
+# LAST UPDATED: 2026-10-29
 
 from machine import I2C, Pin
 import time
 from husb238 import HUSB238
 
-i2c = I2C(0, scl=Pin(22), sda=Pin(21))
+# Change these to match how your board wires I2C
+i2c = I2C(0, scl=Pin(9), sda=Pin(8))
 husb238 = HUSB238(i2c)
 
 while True:
